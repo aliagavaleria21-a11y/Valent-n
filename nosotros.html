@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros 🤍</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="center">
+  <div class="card">
+    <h1>Nosotros ❤️</h1>
+
+    <p id="recuerdo">
+      Toca el corazón.
+    </p>
+
+    <div class="heart" onclick="mostrarRecuerdo()">❤️</div>
+
+    <div id="continuar" class="hidden">
+      <a href="juego.html">Siguiente →</a>
+    </div>
+  </div>
+
+  <script>
+    const recuerdos = [
+      "Todo empezó un 14 de septiembre de 2022.",
+      "Desde entonces, llevamos 3 años y 5 meses.",
+      "No todo ha sido perfecto, pero sí real.",
+      "Y elegirte sigue siendo mi cosa favorita."
+    ];
+
+    let i = 0;
+    function mostrarRecuerdo() {
+      document.getElementById("recuerdo").innerHTML = recuerdos[i];
+      i++;
+      if (i === recuerdos.length) {
+        document.getElementById("continuar").classList.remove("hidden");
+      }
+    }
+  </script>
+</body>
+</html>
