@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para ti 🤍</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="center">
+  <div class="card">
+    <h1>Hola, tú 🤍</h1>
+
+    <p id="mensaje">
+      Hice esto solo para ti.<br>
+      Tócalo con calma.
+    </p>
+
+    <button onclick="cambiarMensaje()">Tócame 💗</button>
+
+    <div id="siguiente" class="hidden">
+      <a href="nosotros.html">Siguiente →</a>
+    </div>
+  </div>
+
+  <script>
+    let clicks = 0;
+    function cambiarMensaje() {
+      clicks++;
+      const texto = document.getElementById("mensaje");
+
+      if (clicks === 1) {
+        texto.innerHTML = "Desde hace un tiempo,<br>mi lugar favorito eres tú.";
+      } else if (clicks === 2) {
+        texto.innerHTML = "No importa el día,<br>si estás tú, está todo bien.";
+      } else {
+        texto.innerHTML = "¿Seguimos? 💕";
+        document.getElementById("siguiente").classList.remove("hidden");
+      }
+    }
+  </script>
+</body>
+</html>
