@@ -1,63 +1,72 @@
+/* Base */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background: #faf7f5;
   color: #2b2b2b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   text-align: center;
 }
 
-section {
-  max-width: 800px;
-  margin: auto;
-  padding: 90px 25px;
+/* Contenedor principal */
+.contenedor {
+  max-width: 700px;
+  padding: 40px 25px;
 }
 
-.hero h1 {
+/* Título */
+h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2.6rem;
   font-weight: 600;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 
-.hero p {
-  font-size: 1.1rem;
-  color: #6b6b6b;
-}
-
-.text {
+/* Texto principal */
+.texto {
   font-size: 1.2rem;
-  line-height: 1.8;
-}
-
-.counter h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-}
-
-.counter p {
-  font-size: 1.4rem;
-  margin-top: 15px;
-}
-
-.letter {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
   line-height: 1.9;
 }
 
-.fade {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1.4s ease forwards;
+/* Palabra secreta */
+.secreto {
+  cursor: pointer;
+  font-style: italic;
+  border-bottom: 1px dotted #c9a6a6;
 }
 
-.fade:nth-of-type(2) { animation-delay: .4s; }
-.fade:nth-of-type(3) { animation-delay: .8s; }
-.fade:nth-of-type(4) { animation-delay: 1.2s; }
+/* Mensaje oculto */
+.mensaje-oculto {
+  margin-top: 35px;
+  font-style: italic;
+  font-size: 1.1rem;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* Mostrar mensaje al interactuar */
+.secreto:hover + .mensaje-oculto,
+.secreto:active + .mensaje-oculto {
+  opacity: 1;
+}
+
+/* Footer */
+footer {
+  margin-top: 60px;
+  font-size: 0.9rem;
+  color: #6b6b6b;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .texto {
+    font-size: 1.1rem;
   }
 }
