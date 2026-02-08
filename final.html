@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -10,7 +11,7 @@
   <div class="card">
     <h1>Para ti 🤍</h1>
 
-    <p>
+    <p id="carta">
       No hice esto para que sea perfecto.<br>
       Lo hice porque pensé en ti.
     </p>
@@ -19,39 +20,16 @@
 
     <p id="secreto" class="hidden">
       Gracias por estos 3 años y 5 meses.<br>
-      Mi lugar sigue y seguirá siendo contigo.
+      Mi lugar sigue siendo contigo.
     </p>
 
     <p class="firma">— Siempre yo</p>
   </div>
 
   <script>
-  // Apagar música al llegar al final
-  window.addEventListener("load", () => {
-    const musica = window.opener?.document.getElementById("musica") 
-      || document.getElementById("musica");
-
-    if (musica) {
-      musica.pause();
-      musica.currentTime = 0;
+    function revelar() {
+      document.getElementById("secreto").classList.remove("hidden");
     }
-  });
-
-  function revelar() {
-    document.getElementById("secreto").classList.remove("hidden");
-    lanzarCorazones();
-  }
-
-  function lanzarCorazones() {
-    for (let i = 0; i < 18; i++) {
-      const corazon = document.createElement("div");
-      corazon.className = "corazon-flotante";
-      corazon.innerHTML = "❤️";
-      corazon.style.left = Math.random() * 100 + "vw";
-      corazon.style.animationDuration = (2 + Math.random() * 2) + "s";
-      document.body.appendChild(corazon);
-
-      setTimeout(() => corazon.remove(), 4000);
-    }
-  }
-</script>
+  </script>
+</body>
+</html>
