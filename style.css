@@ -1,128 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
 
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, sans-serif;
-  color: #7a1c2b;
-
-  background-color: #fff0f4;
-  background-image:
-    radial-gradient(#f4a3b4 1.5px, transparent 1.5px),
-    radial-gradient(#f4a3b4 1.5px, transparent 1.5px);
-  background-size: 30px 30px;
-  background-position: 0 0, 15px 15px;
-}
-
-.center {
   min-height: 100vh;
+  background-color: #ffe6ec;
+  background-image:
+    radial-gradient(#ffb6c1 1px, transparent 1px),
+    radial-gradient(#ffccd5 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: #7a1f3d;
 }
 
-.card {
-  background: white;
-  padding: 40px 30px;
-  border-radius: 20px;
-  max-width: 350px;
-  box-shadow: 0 10px 30px rgba(214, 80, 110, 0.25);
+.center {
+  padding: 30px;
+  max-width: 500px;
 }
 
 h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  letter-spacing: 0.5px;
+  font-size: 2.2em;
+  margin-bottom: 15px;
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1.2em;
   line-height: 1.6;
 }
 
 button {
-  margin-top: 25px;
-  padding: 12px 22px;
-  font-size: 1rem;
+  background: #ff6f91;
   border: none;
-  border-radius: 30px;
-  background: #e63963;
   color: white;
+  padding: 14px 22px;
+  border-radius: 30px;
+  font-size: 1em;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 button:hover {
-  background: #d62850;
-}
-
-a {
-  display: inline-block;
-  margin-top: 25px;
-  text-decoration: none;
-  color: #e63963;
-  font-weight: 500;
+  background: #ff4f7b;
 }
 
 .hidden {
   display: none;
 }
 
-.heart {
-  font-size: 3rem;
-  margin-top: 20px;
-  cursor: pointer;
-  animation: latir 1.2s infinite;
-}
-
-@keyframes latir {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
-}
-.opciones {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.opciones button {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  font-size: 1.1rem;
-}
-.sello {
-  font-size: 3rem;
-  margin: 20px auto;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.sello:hover {
-  transform: scale(1.15) rotate(-5deg);
-}
-
-.firma {
-  margin-top: 25px;
-  font-style: italic;
-  opacity: 0.8;
-}
+/* corazones */
 .corazon-flotante {
   position: fixed;
-  top: -10px;
-  font-size: 1.5rem;
-  animation: caer linear forwards;
-  z-index: 999;
+  bottom: -20px;
+  font-size: 24px;
+  animation: subir 4s linear forwards;
 }
 
-@keyframes caer {
+@keyframes subir {
   to {
-    transform: translateY(110vh);
+    transform: translateY(-110vh);
     opacity: 0;
   }
 }
+
+/* destello */
 .destello {
   position: fixed;
   width: 12px;
@@ -135,13 +83,6 @@ a {
 }
 
 @keyframes destellar {
-  from {
-    transform: scale(0.6);
-    opacity: 1;
-  }
-  to {
-    transform: scale(2.5);
-    opacity: 0;
-  }
-}
-
+  from { transform: scale(0.6); opacity: 1; }
+  to { transform: scale(2.5); opacity: 0; }
+} 
