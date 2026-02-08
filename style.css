@@ -1,88 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
-
-* {
-  box-sizing: border-box;
-  font-family: 'Quicksand', sans-serif;
-}
-
 body {
   margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #ffe6ec, #fff5f7);
+  color: #7a1c2b;
+}
+
+.center {
   min-height: 100vh;
-  background-color: #ffe6ec;
-  background-image:
-    radial-gradient(#ffb6c1 1px, transparent 1px),
-    radial-gradient(#ffccd5 1px, transparent 1px);
-  background-size: 40px 40px;
-  background-position: 0 0, 20px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #7a1f3d;
 }
 
-.center {
-  padding: 30px;
-  max-width: 500px;
+.card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  max-width: 350px;
+  box-shadow: 0 10px 30px rgba(214, 80, 110, 0.2);
 }
 
 h1 {
-  font-size: 2.2em;
-  margin-bottom: 15px;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 1.1rem;
   line-height: 1.6;
 }
 
 button {
-  background: #ff6f91;
+  margin-top: 25px;
+  padding: 12px 22px;
+  font-size: 1rem;
   border: none;
-  color: white;
-  padding: 14px 22px;
   border-radius: 30px;
-  font-size: 1em;
+  background: #e63963;
+  color: white;
   cursor: pointer;
-  margin-top: 20px;
 }
 
 button:hover {
-  background: #ff4f7b;
+  background: #d62850;
+}
+
+a {
+  display: inline-block;
+  margin-top: 25px;
+  text-decoration: none;
+  color: #e63963;
+  font-weight: bold;
 }
 
 .hidden {
   display: none;
 }
-
-/* corazones */
-.corazon-flotante {
-  position: fixed;
-  bottom: -20px;
-  font-size: 24px;
-  animation: subir 4s linear forwards;
-}
-
-@keyframes subir {
-  to {
-    transform: translateY(-110vh);
-    opacity: 0;
-  }
-}
-
-/* destello */
-.destello {
-  position: fixed;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  pointer-events: none;
-  background: radial-gradient(circle, #ff9fb8 0%, transparent 70%);
-  animation: destellar 0.8s ease-out forwards;
-  z-index: 1000;
-}
-
-@keyframes destellar {
-  from { transform: scale(0.6); opacity: 1; }
-  to { transform: scale(2.5); opacity: 0; }
-} 
