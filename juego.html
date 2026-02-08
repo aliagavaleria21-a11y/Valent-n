@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Un pequeño juego 💗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="center">
+  <div class="card">
+    <h1>Pequeña decisión 💞</h1>
+
+    <p id="texto">
+      Elige una opción.<br>
+      No hay respuestas malas 😉
+    </p>
+
+    <div class="opciones">
+      <button onclick="elegir(1)">A</button>
+      <button onclick="elegir(2)">B</button>
+    </div>
+
+    <div id="seguir" class="hidden">
+      <a href="final.html">Siguiente →</a>
+    </div>
+  </div>
+
+  <script>
+    function elegir(opcion) {
+      const texto = document.getElementById("texto");
+      if (opcion === 1) {
+        texto.innerHTML = "Elegiste A.<br>Y eso me gusta, porque eres tú 💗";
+      } else {
+        texto.innerHTML = "Elegiste B.<br>Y eso me gusta, porque eres tú 💗";
+      }
+      document.getElementById("seguir").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
