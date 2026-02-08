@@ -1,10 +1,15 @@
-jbody {
+body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(135deg, #ffe6ec, #fff5f7);
   color: #7a1c2b;
-}
 
+  background-color: #fff0f4;
+  background-image:
+    radial-gradient(#f4a3b4 1.5px, transparent 1.5px),
+    radial-gradient(#f4a3b4 1.5px, transparent 1.5px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
 .center {
   min-height: 100vh;
   display: flex;
