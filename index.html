@@ -1,61 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Para ti</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para ti 🤍</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="center">
+  <div class="card">
+    <h1>Hola, guapo 🤍</h1>
 
-<audio id="musica" loop>
-  <source src="angelsbymyside.mp3" type="audio/mpeg">
-</audio>
+    <p id="mensaje">
+      Hice este detalle para ti❤️.<br>
+      Tócalo con calma.
+    </p>
 
-<h1>Hola amor 💕</h1>
-<p id="mensaje">Tócame</p>
-<button onclick="cambiarMensaje()">💗</button>
-<br>
-<a id="siguiente" class="hidden" href="nosotros.html">Seguir →</a>
+    <button onclick="cambiarMensaje()">Tócame 💗</button>
 
-<script>
-let clicks = 0;
-const musica = document.getElementById("musica");
+    <div id="siguiente" class="hidden">
+      <a href="nosotros.html">Siguiente →</a>
+    </div>
+  </div>
 
-if (localStorage.getItem("musicaActiva") === "si") {
-  musica.volume = 0.4;
-  musica.play();
-}
+  <script>
+    let clicks = 0;
+    function cambiarMensaje() {
+      clicks++;
+      const texto = document.getElementById("mensaje");
 
-function cambiarMensaje() {
-  clicks++;
-
-  if (musica.paused) {
-    musica.volume = 0.4;
-    musica.play();
-    localStorage.setItem("musicaActiva", "si");
-  }
-
-  const texto = document.getElementById("mensaje");
-
-  if (clicks === 1) {
-    texto.innerHTML = "Desde el 14 de septiembre de 2022...";
-  } else if (clicks === 2) {
-    texto.innerHTML = "Mi lugar favorito siempre ha sido contigo.";
-  } else {
-    texto.innerHTML = "¿Seguimos? 💕";
-    document.getElementById("siguiente").classList.remove("hidden");
-  }
-}
-
-document.addEventListener("click", (e) => {
-  const d = document.createElement("div");
-  d.className = "destello";
-  d.style.left = e.clientX - 6 + "px";
-  d.style.top = e.clientY - 6 + "px";
-  document.body.appendChild(d);
-  setTimeout(() => d.remove(), 800);
-});
-</script>
-
+      if (clicks === 1) {
+        texto.innerHTML = "Desde hace 3 años,<br>mi lugar favorito eres tú.";
+      } else if (clicks === 2) {
+        texto.innerHTML = "No importa el día,<br>si estás tú, está todo bien.";
+      } else {
+        texto.innerHTML = "¿Seguimos? 💕";
+        document.getElementById("siguiente").classList.remove("hidden");
+      }
+    }
+  </script>
 </body>
 </html>
