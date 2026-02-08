@@ -2,53 +2,34 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nosotros 🤍</title>
+  <title>Nosotros</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="center">
-  <div class="card">
-    <h1>Nosotros ❤️</h1>
 
-    <p id="recuerdo">
-      Toca el corazón.
-    </p>
+<audio id="musica" loop>
+  <source src="angelsbymyside.mp3" type="audio/mpeg">
+</audio>
 
-    <div class="heart" onclick="mostrarRecuerdo()">❤️</div>
+<h1>Nosotros 🤍</h1>
+<p>3 años y 5 meses de risas, apoyo y amor.</p>
+<a href="juego.html"><button>Un jueguito 🎲</button></a>
 
-    <div id="continuar" class="hidden">
-      <a href="juego.html">Siguiente →</a>
-    </div>
-  </div>
+<script>
+const musica = document.getElementById("musica");
+if (localStorage.getItem("musicaActiva") === "si") {
+  musica.volume = 0.4;
+  musica.play();
+}
 
-  <script>
-    const recuerdos = [
-      "Todo empezó un 14 de septiembre de 2022.",
-      "Desde entonces, llevamos 3 años y 5 meses.",
-      "No todo ha sido perfecto, pero sí real.",
-      "Y elegirte sigue siendo mi cosa favorita."
-    ];
+document.addEventListener("click", () => {
+  if (musica.paused) {
+    musica.volume = 0.4;
+    musica.play();
+    localStorage.setItem("musicaActiva", "si");
+  }
+}, { once: true });
+</script>
 
-    let i = 0;
-    function mostrarRecuerdo() {
-      document.getElementById("recuerdo").innerHTML = recuerdos[i];
-      i++;
-      if (i === recuerdos.length) {
-        document.getElementById("continuar").classList.remove("hidden");
-      }
-    }
-  </script>
 </body>
 </html>
-<script>
-  document.addEventListener("click", (e) => {
-    const d = document.createElement("div");
-    d.className = "destello";
-    d.style.left = e.clientX - 6 + "px";
-    d.style.top = e.clientY - 6 + "px";
-    document.body.appendChild(d);
-
-    setTimeout(() => d.remove(), 800);
-  });
-</script>
