@@ -1,4 +1,4 @@
-body {
+jbody {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background: linear-gradient(135deg, #ffe6ec, #fff5f7);
@@ -56,4 +56,16 @@ a {
 
 .hidden {
   display: none;
+}
+.heart {
+  font-size: 3rem;
+  margin-top: 20px;
+  cursor: pointer;
+  animation: latir 1.2s infinite;
+}
+
+@keyframes latir {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }
