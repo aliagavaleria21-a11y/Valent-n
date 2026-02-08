@@ -1,52 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Un pequeño juego 💗</title>
+  <meta charset="UTF-8">
+  <title>Juego</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="center">
-  <div class="card">
-    <h1>Pequeña decisión 💞</h1>
 
-    <p id="texto">
-      Elige una opción.<br>
-      No hay respuestas malas 
-    </p>
+<audio id="musica" loop>
+  <source src="angelsbymyside.mp3" type="audio/mpeg">
+</audio>
 
-    <div class="opciones">
-      <button onclick="elegir(1)">A</button>
-      <button onclick="elegir(2)">B</button>
-    </div>
+<h1>Pregunta 💌</h1>
+<p>¿Seguimos eligiéndonos todos los días?</p>
+<a href="final.html"><button>Sí, siempre 💕</button></a>
 
-    <div id="seguir" class="hidden">
-      <a href="final.html">Siguiente →</a>
-    </div>
-  </div>
-  
-  <script>
-    function elegir(opcion) {
-      const texto = document.getElementById("texto");
-      if (opcion === 1) {
-        texto.innerHTML = "Elegiste A.<br> Vale por un beso💋";
-      } else {
-        texto.innerHTML = "Elegiste B.<br> Vale por un beso en el que tu elijes donde 👀";
-      }
-      document.getElementById("seguir").classList.remove("hidden");
-    }
-  </script>
+<script>
+const musica = document.getElementById("musica");
+if (localStorage.getItem("musicaActiva") === "si") {
+  musica.volume = 0.4;
+  musica.play();
+}
+
+document.addEventListener("click", () => {
+  if (musica.paused) {
+    musica.volume = 0.4;
+    musica.play();
+    localStorage.setItem("musicaActiva", "si");
+  }
+}, { once: true });
+</script>
+
 </body>
 </html>
-<script>
-  document.addEventListener("click", (e) => {
-    const d = document.createElement("div");
-    d.className = "destello";
-    d.style.left = e.clientX - 6 + "px";
-    d.style.top = e.clientY - 6 + "px";
-    document.body.appendChild(d);
-
-    setTimeout(() => d.remove(), 800);
-  <script>
- 
