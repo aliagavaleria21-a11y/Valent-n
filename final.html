@@ -11,7 +11,7 @@
   <div class="card">
     <h1>Para ti 🤍</h1>
 
-    <p id="carta">
+    <p>
       No hice esto para que sea perfecto.<br>
       Lo hice porque pensé en ti.
     </p>
@@ -29,6 +29,20 @@
   <script>
     function revelar() {
       document.getElementById("secreto").classList.remove("hidden");
+      lanzarCorazones();
+    }
+
+    function lanzarCorazones() {
+      for (let i = 0; i < 18; i++) {
+        const corazon = document.createElement("div");
+        corazon.className = "corazon-flotante";
+        corazon.innerHTML = "❤️";
+        corazon.style.left = Math.random() * 100 + "vw";
+        corazon.style.animationDuration = (2 + Math.random() * 2) + "s";
+        document.body.appendChild(corazon);
+
+        setTimeout(() => corazon.remove(), 4000);
+      }
     }
   </script>
 </body>
