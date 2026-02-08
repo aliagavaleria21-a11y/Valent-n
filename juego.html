@@ -39,3 +39,14 @@
   </script>
 </body>
 </html>
+<script>
+  document.addEventListener("click", (e) => {
+    const d = document.createElement("div");
+    d.className = "destello";
+    d.style.left = e.clientX - 6 + "px";
+    d.style.top = e.clientY - 6 + "px";
+    document.body.appendChild(d);
+
+    setTimeout(() => d.remove(), 800);
+  });
+</script>
