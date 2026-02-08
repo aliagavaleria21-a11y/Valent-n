@@ -123,3 +123,25 @@ a {
     opacity: 0;
   }
 }
+.destello {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, #ff9fb8 0%, transparent 70%);
+  animation: destellar 0.8s ease-out forwards;
+  z-index: 1000;
+}
+
+@keyframes destellar {
+  from {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
