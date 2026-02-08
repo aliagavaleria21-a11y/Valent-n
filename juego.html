@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Juego</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Un pequeño juego 💗</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="center">
+  <div class="card">
+    <h1>Pequeña decisión 💞</h1>
 
-<audio id="musica" loop>
-  <source src="angelsbymyside.mp3" type="audio/mpeg">
-</audio>
+    <p id="texto">
+      Elige una opción.<br>
+      No hay respuestas malas 😉
+    </p>
 
-<h1>Pregunta 💌</h1>
-<p>¿Seguimos eligiéndonos todos los días?</p>
-<a href="final.html"><button>Sí, siempre 💕</button></a>
+    <div class="opciones">
+      <button onclick="elegir(1)">A</button>
+      <button onclick="elegir(2)">B</button>
+    </div>
 
-<script>
-const musica = document.getElementById("musica");
-if (localStorage.getItem("musicaActiva") === "si") {
-  musica.volume = 0.4;
-  musica.play();
-}
+    <div id="seguir" class="hidden">
+      <a href="final.html">Siguiente →</a>
+    </div>
+  </div>
 
-document.addEventListener("click", () => {
-  if (musica.paused) {
-    musica.volume = 0.4;
-    musica.play();
-    localStorage.setItem("musicaActiva", "si");
-  }
-}, { once: true });
-</script>
-
+  <script>
+    function elegir(opcion) {
+      const texto = document.getElementById("texto");
+      if (opcion === 1) {
+        texto.innerHTML = "Elegiste A.<br>Vale por un beso💋";
+      } else {
+        texto.innerHTML = "Elegiste B.<br>Vale por un beso en donde tu quieras👀 ";
+      }
+      document.getElementById("seguir").classList.remove("hidden");
+    }
+  </script>
 </body>
 </html>
