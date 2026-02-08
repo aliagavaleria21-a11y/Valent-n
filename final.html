@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para siempre 🤍</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="center">
+  <div class="card">
+    <h1>Para ti 🤍</h1>
+
+    <p id="carta">
+      No hice esto para que sea perfecto.<br>
+      Lo hice porque pensé en ti.
+    </p>
+
+    <div class="sello" onclick="revelar()">💌</div>
+
+    <p id="secreto" class="hidden">
+      Gracias por estos 3 años y 5 meses.<br>
+      Mi lugar sigue y seguirá siendo contigo.
+    </p>
+
+    <p class="firma">— Siempre yo</p>
+  </div>
+
+  <script>
+    function revelar() {
+      document.getElementById("secreto").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
