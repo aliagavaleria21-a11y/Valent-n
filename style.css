@@ -93,3 +93,19 @@ a {
   border-radius: 50%;
   font-size: 1.1rem;
 }
+.sello {
+  font-size: 3rem;
+  margin: 20px auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.sello:hover {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.firma {
+  margin-top: 25px;
+  font-style: italic;
+  opacity: 0.8;
+}
