@@ -13,7 +13,7 @@
 
     <p id="texto">
       Elige una opción.<br>
-      No hay respuestas malas 😉
+      No hay respuestas malas 
     </p>
 
     <div class="opciones">
@@ -25,14 +25,14 @@
       <a href="final.html">Siguiente →</a>
     </div>
   </div>
-
+  
   <script>
     function elegir(opcion) {
       const texto = document.getElementById("texto");
       if (opcion === 1) {
-        texto.innerHTML = "Elegiste A.<br>Y eso me gusta, porque eres tú 💗";
+        texto.innerHTML = "Elegiste A.<br> Vale por un beso💋";
       } else {
-        texto.innerHTML = "Elegiste B.<br>Y eso me gusta, porque eres tú 💗";
+        texto.innerHTML = "Elegiste B.<br> Vale por un beso en el que tu elijes donde 👀";
       }
       document.getElementById("seguir").classList.remove("hidden");
     }
