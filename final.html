@@ -27,9 +27,23 @@
   </div>
 
   <script>
-    function revelar() {
-      document.getElementById("secreto").classList.remove("hidden");
+  function revelar() {
+    document.getElementById("secreto").classList.remove("hidden");
+    lanzarCorazones();
+  }
+
+  function lanzarCorazones() {
+    for (let i = 0; i < 18; i++) {
+      const corazon = document.createElement("div");
+      corazon.classList.add("corazon-flotante");
+      corazon.innerHTML = "❤️";
+      corazon.style.left = Math.random() * 100 + "vw";
+      corazon.style.animationDuration = (2 + Math.random() * 2) + "s";
+      document.body.appendChild(corazon);
+
+      setTimeout(() => {
+        corazon.remove();
+      }, 4000);
     }
-  </script>
-</body>
-</html>
+  }
+</script>
