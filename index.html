@@ -27,21 +27,29 @@
   </div>
 
   <script>
-    let clicks = 0;
-    function cambiarMensaje() {
-      clicks++;
-      const texto = document.getElementById("mensaje");
+  let clicks = 0;
+  const musica = document.getElementById("musica");
 
-      if (clicks === 1) {
-        texto.innerHTML = "Desde hace 3 años,<br>mi lugar favorito eres tú.";
-      } else if (clicks === 2) {
-        texto.innerHTML = "No importa el día,<br>si estás tú, está todo bien.";
-      } else {
-        texto.innerHTML = "¿Seguimos? 💕";
-        document.getElementById("siguiente").classList.remove("hidden");
-      }
+  function cambiarMensaje() {
+    clicks++;
+
+    if (musica.paused) {
+      musica.volume = 0.4;
+      musica.play();
     }
-  </script>
+
+    const texto = document.getElementById("mensaje");
+
+    if (clicks === 1) {
+      texto.innerHTML = "Desde hace un tiempo,<br>mi lugar favorito eres tú.";
+    } else if (clicks === 2) {
+      texto.innerHTML = "No importa el día,<br>si estás tú, está todo bien.";
+    } else {
+      texto.innerHTML = "¿Seguimos? 💕";
+      document.getElementById("siguiente").classList.remove("hidden");
+    }
+  }
+</script>
 </body>
 </html>
 <script>
