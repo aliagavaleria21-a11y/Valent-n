@@ -107,3 +107,17 @@ a {
   font-style: italic;
   opacity: 0.8;
 }
+.corazon-flotante {
+  position: fixed;
+  top: -10px;
+  font-size: 1.5rem;
+  animation: caer linear forwards;
+  z-index: 999;
+}
+
+@keyframes caer {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
